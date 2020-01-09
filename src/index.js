@@ -26,7 +26,7 @@ app.delete('/user/:id', (req, res) => {
     
         if(users.length > 0){
             users = [];
-            res.status(200).json({
+            res.status(202).json({
                 ok: true
             }) 
         }else{
