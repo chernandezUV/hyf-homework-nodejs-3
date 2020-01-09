@@ -24,7 +24,7 @@ app.post('/user', (req, res) => {
 
 app.delete('/user/:id', (req, res) => {
     try{
-        if(users){
+        if(users.length > 0){
             res.status(200).json({
                 ok: true
             }) 
