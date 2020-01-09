@@ -23,7 +23,7 @@ app.post('/user', (req, res) => {
 });
 
 app.delete('/user/:id', (req, res) => {
-    try{
+    
         if(users.length > 0){
             users = [];
             res.status(200).json({
@@ -32,11 +32,8 @@ app.delete('/user/:id', (req, res) => {
         }else{
             res.status(204).json({
                 ok: true
-            }) 
+            });
         }
-    }catch(err){
-        next(err);
-    }
 });
 
 app.listen(3000, function () {
