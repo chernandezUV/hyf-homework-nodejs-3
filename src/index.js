@@ -22,6 +22,20 @@ app.post('/user', (req, res) => {
     res.json(users);
 });
 
+app.delete('/user/:id', (req, res) => {
+    
+        if(users.length > 0){
+            users = [];
+            res.status(202).json({
+                ok: true
+            }) 
+        }else{
+            res.status(204).json({
+                ok: true
+            });
+        }
+});
+
 app.listen(3000, function () {
   console.log('Server Running in port 3000!');
 });
