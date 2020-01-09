@@ -16,6 +16,12 @@ app.get('/user/:id', (req, res) => {
     res.json(user);
 });
 
+// Array of users**. So that first user would be { id: 0 }
+app.post('/user', (req, res) => {
+    users.push({ id: 0 });
+    res.json(users);
+});
+
 app.listen(3000, function () {
   console.log('Server Running in port 3000!');
 });
