@@ -22,6 +22,22 @@ app.post('/user', (req, res) => {
     res.json(users);
 });
 
+app.delete('/user/:id', (req, res) => {
+    try{
+        if(users){
+            res.status(200).json({
+                ok: true
+            }) 
+        }else{
+            res.status(204).json({
+                ok: true
+            }) 
+        }
+    }catch(err){
+        next(err);
+    }
+});
+
 app.listen(3000, function () {
   console.log('Server Running in port 3000!');
 });
